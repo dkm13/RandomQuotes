@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://kit.fontawesome.com/049c2c6974.js" crossorigin="anonymous"></script>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background-color: #e6ffff;
+}
+.container {
+  width: 500px;
+  height: 330px;
+  background-color: #d9d9d9;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid navy;
+  border-radius: 14px;
+  box-shadow: 0px 0px 16px black;
+}
+button{
+   width: 168px;
+   height: 35px;
+   background-color: navy;
+   color: white;
+   font-size: 22px;
+   cursor: pointer;
+   display: flex;
+   margin: 10px auto;
+   justify-content: center;
+   text-align: center;
+   padding-top: 2px;
+   border: 3px solid white;
+   box-shadow: 0px 0px 3px black;
+   border-radius: 6px;
+}
+#quote-icon{
+  font-size: 55px;
+  padding: 0 6px 0 7px;
+  color: gray;
+}
+#quote{
+  font-size: 26px;
+  padding: 0 0 5px 10px;
+}
+#author{
+  text-align: right;
+  padding: 14px 8px 0 0;
+  font-size: 22px;
+  color: red;
+}
+@media screen and (max-width: 500px) {
+ .container{
+   width: 90%;
+   margin: auto;
+   height: 400px;
+ }
+}
+@media screen and (max-width: 318px) {
+ .container{
+   width: 90%;
+   margin: auto;
+   height: 450px;
+ }
+}
+@media screen and (max-width: 227px) {
+ .container{
+   width: 90%;
+   margin: auto;
+   height: 550px;
+ }
+ #author{
+  text-align: right;
+  padding: 10px 8px 0 0;
+  font-size: 20px;
+  color: red;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class='container'>
+  <button id='butt' onclick='myfunction()'>Generate Quote</button>
+  <h2><span id='quote-icon'><i class="fas fa-quote-left"></i></span></h2>
+  
+  <h2 id='quote'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+  
+  <h3 id='author'>- Author</h3>
+</div>
+
+<script>
+const quotes = [
+   {
+      quote:
+        "Life is too short and sweet to be spent by cribbing and complaining about things.",
+      author: " Life"
+    },
+    
+    {
+      quote:
+        "Prose is architecture, not interior decoration",
+       author: "Ernest Hemingway"
+    },
+    
+    {
+      quote:
+        "I try to create sympathy for my characters, then turn the monsters loose.",
+       author: "Stephen King"
+    },
+      
+    {
+       quote:
+        "It's none of their business that you have to learn to write. Let them think you were born that way",
+       author: "Ernest Hemingway"
+    },
+    
+    {
+       quote:
+        "Most writers regard the truth as their most valuable possession, and therefore are most economical in its use.",
+       author: "Mark Twain"
+    },
+    
+    {
+      quote:
+        "You will face many defeats in life, but never let yourself be defeated",
+       author: "Maya Angelou."
+    },
+    
+    {
+      quote:
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+       author: "Nelson Mandela"
+    },
+    
+    ];
+
+
+function myfunction() {
+  let random = Math.floor(Math.random() * quotes.length);
+  console.log(random);
+  
+  document.getElementById('quote').textContent = quotes[random].quote;
+  document.getElementById('author').textContent = quotes[random].author;
+}
+
+</script>
+
+</body>
+</html>
